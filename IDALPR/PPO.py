@@ -96,6 +96,7 @@ class PPO:
         self.memory_counter += 1
 
     def rasch_diff(self,state,p=0.5):
+        state = state + np.log(p / (1 - p)) # Eq.(15), rasch model
         return state
 
 
